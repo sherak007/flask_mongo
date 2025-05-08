@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head><title>Submit Data</title></head>
+<body>
+    <h2>Submit Form</h2>
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            <ul style="color:red;">
+            {% for message in messages %}
+                <li>{{ message }}</li>
+            {% endfor %}
+            </ul>
+        {% endif %}
+    {% endwith %}
+    <form method="POST">
+        Name: <input type="text" name="name" required><br><br>
+        Email: <input type="email" name="email" required><br><br>
+        <input type="submit" value="Submit">
+    </form>
+</body>
+</html>
+
